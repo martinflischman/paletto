@@ -4,6 +4,10 @@ const generateBtn = document.getElementById("generate-btn");
 const swatchColors = document.getElementById("swatch-colors");
 const hexCodes = document.getElementById("hex-codes");
 
+const copyHexCode = (hex) => {
+  navigator.clipboard.writeText(hex);
+};
+
 generateBtn.addEventListener("click", () => {
   async function getColorInfo() {
     const response = await fetch(
@@ -14,7 +18,11 @@ generateBtn.addEventListener("click", () => {
     swatchColors.innerHTML = data.colors
       .map(
         (color) =>
-          `<div class="flex-1" style="background-color: ${color.hex.value}; height: 30px"></div>`,
+          `<div 
+              class="flex-1" 
+              style="background-color: ${color.hex.value}; height: 30px" 
+              onclick="copyHexCode('${color.hex.value}')">
+          </div>`,
       )
       .join("");
 
