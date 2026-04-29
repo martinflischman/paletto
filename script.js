@@ -3,9 +3,14 @@ const colorStyle = document.getElementById("color-style");
 const generateBtn = document.getElementById("generate-btn");
 const swatchColors = document.getElementById("swatch-colors");
 const hexCodes = document.getElementById("hex-codes");
+const copyMsg = document.getElementById("copy-msg");
 
 const copyHexCode = (hex) => {
   navigator.clipboard.writeText(hex);
+  copyMsg.classList.remove("hidden");
+  setTimeout(() => {
+    copyMsg.classList.add("hidden");
+  }, 2000);
 };
 
 generateBtn.addEventListener("click", () => {
