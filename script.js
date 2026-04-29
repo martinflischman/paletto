@@ -24,8 +24,8 @@ generateBtn.addEventListener("click", () => {
       .map(
         (color) =>
           `<div 
-              class="flex-1" 
-              style="background-color: ${color.hex.value}; height: 30px" 
+              class="flex-1 h-96" 
+              style="background-color: ${color.hex.value};" 
               onclick="copyHexCode('${color.hex.value}')">
           </div>`,
       )

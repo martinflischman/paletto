@@ -11,11 +11,12 @@
     <script defer src="script.js"></script>
 </head>
 
-<body>
-    <main class="container px-4 py-4">
-        <div class="flex gap-4">
-            <input type="color" name="seed-color" id="seed-color" value="#f55a5a">
-            <select id="color-style">
+<body class="bg-neutral-800 flex justify-center items-center min-h-screen">
+    <main class="card bg-base-100 w-full max-w-lg shadow-xl overflow-hidden">
+        <div class="flex items-center gap-3 p-4">
+            <input type="color" name="seed-color" id="seed-color" class="w-16 h-12 rounded cursor-pointer border-none"
+                value="#f55a5a">
+            <select id="color-style" class="select select-bordered flex-1">
                 <option value="monochrome">Monochrome</option>
                 <option value="monochrome-dark">Monochrome-dark</option>
                 <option value="monochrome-light">Monochrome-light</option>
@@ -26,10 +27,9 @@
             </select>
             <button id="generate-btn" class="btn">Get colour scheme</button>
         </div>
-        <div id="swatch-colors" class="flex"></div>
-        <div id="hex-codes" class="flex justify-around"></div>
-
-        <div id="copy-msg" class="hidden">Copied!</div>
+        <div id="swatch-colors" class="flex h-96"></div>
+        <div id="hex-codes" class="flex justify-around py-3 bg-base-200"></div>
+        <div id="copy-msg" class="hidden text-center py-2 text-success font-semibold">Copied!</div>
     </main>
 </body>
 
